@@ -1,0 +1,85 @@
+﻿<Page x:Class="TimeTrackingApp.TimeTracking"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:app="clr-namespace:TimeTrackingApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      xmlns:local="clr-namespace:TimeTrackingApp"
+	Title="TimeTracking" Loaded="Page_Loaded">
+    <Page.Resources>
+        <app:BoolToVisibleOrHidden x:Key="BooleanToVisibilityConverter" Reverse="False"  Collapse="True" />
+        <app:BoolToVisibleOrHidden x:Key="InverseBooleanToVisibilityConverter" Reverse="True"  Collapse="True" />
+    </Page.Resources>
+    <Grid>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem x:Name="LogTime" Header="Log Time">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    
+                    <Label HorizontalAlignment="Right" Margin="5">Project: </Label>
+                    <ComboBox Grid.Column="1" Margin="5" ItemsSource="{Binding Projects}" DisplayMemberPath="name" SelectedValue="{Binding SelectedProject}"></ComboBox>
+                    <Label HorizontalAlignment="Right" Grid.Row="1" Margin="5">Tasks:</Label>
+                    <ListBox Margin="5" Grid.Row="1" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ItemsSource="{Binding MyTasks}" SelectedValue="{Binding SelectedTask}">
+                        <ListBox.Resources>
+                            <local:WorkItemFieldsNameToString x:Key="convertNametoString"/>
+                        </ListBox.Resources>
+                        <ListBox.ItemTemplate>                            
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding id}" />
+                                    <TextBlock Text=" | " />
+                                    <TextBlock Text="{Binding fields, Converter={StaticResource convertNametoString}}" Foreground="Blue" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Label HorizontalAlignment="Right" Grid.Row="2" Margin="5">Type: </Label>
+                    <ComboBox Grid.Column="1" Grid.Row="2" Margin="5" ItemsSource="{Binding TimeEntryTypes}" DisplayMemberPath="name" SelectedValue="{Binding SelectedTimeEntryType}"></ComboBox>
+                    <Border Grid.Row="3" Grid.ColumnSpan="2" Background="Black" Height="2" />
+                    <StackPanel Grid.ColumnSpan="2" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button 
+                    Visibility="{Binding IsWorking, Converter={StaticResource InverseBooleanToVisibilityConverter}}"
+                    Command="{Binding StartTrackTimeCommand}" Background="Lime" Padding="10" Margin="10" TextElement.FontSize="14">Start</Button>
+                        <TextBlock Visibility="{Binding IsWorking, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   Text="{Binding Time}" TextElement.FontSize="14" Padding="10" Margin="10" />
+                        <Button 
+                    Visibility="{Binding IsWorking, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Command="{Binding StopTrackTimeCommand}" Background="Yellow" Padding="10" Margin="10" TextElement.FontSize="14">Stop</Button>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="History for Today" x:Name="HistoryTab">
+                <Grid>
+                    <ItemsControl ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" ItemsSource="{Binding TodaysTimeEntries}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding id}" />
+                                    <TextBlock Text=" , " />
+                                    <TextBlock Text="{Binding hours}" />
+                                    <TextBlock Text=" , " />
+                                    <TextBlock Text="{Binding type}" />
+                                    <TextBlock Text=" , " />
+                                    <TextBlock Text="{Binding note}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

@@ -1,0 +1,15 @@
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\TeamPulse.Integration.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\TeamPulse.Integration.pdb
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\Newtonsoft.Json.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\System.Net.Http.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\System.Net.Http.Formatting.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\System.Net.Http.WebRequest.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\Newtonsoft.Json.xml
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\System.Net.Http.xml
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\System.Net.Http.Formatting.xml
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\bin\Debug\System.Net.Http.WebRequest.xml
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\obj\Debug\TeamPulse.Integration.csprojResolveAssemblyReference.cache
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\obj\Debug\Interop.SHDocVw.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\obj\Debug\TeamPulse.Integration.csproj.ResolveComReference.cache
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\obj\Debug\TeamPulse.Integration.dll
+C:\Work\TeamPulse\10-Telerik-TeamPulse\Dev\Initial\SDK\dotnet\TeamPulse.Integration\obj\Debug\TeamPulse.Integration.pdb

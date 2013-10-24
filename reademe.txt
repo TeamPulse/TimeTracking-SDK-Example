@@ -1,0 +1,5 @@
+TeamPulse.Integration is a library project that contains the authentication and the REST client samples.
+
+DataServiceSample is sample console app that shows how to read/write data from the oData service.
+
+TimeTrackingApp is a sample WPF application that shows how to read/write that from the REST service.
