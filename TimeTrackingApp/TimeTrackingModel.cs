@@ -224,11 +224,18 @@ namespace TimeTrackingApp
 
         private void StartTrackTimeExecute(object arg)
         {
-            startTime = DateTime.Now;
-            Time = new TimeSpan().ToString(@"hh\:mm\:ss");
-            IsWorking = true;
-            Message = null;
-            dispatcherTimer.Start();
+            if (SelectedTask != null && SelectedTask.id > 0)
+            {
+                startTime = DateTime.Now;
+                Time = new TimeSpan().ToString(@"hh\:mm\:ss");
+                IsWorking = true;
+                Message = null;
+                dispatcherTimer.Start();
+            }
+            else
+            {
+                MessageBox.Show("Please select a task first.");
+            }
         }
 
         private bool StartTrackTimeCanExecute(object arg)

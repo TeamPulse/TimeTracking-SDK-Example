@@ -9,13 +9,8 @@ namespace TimeTrackingApp
 {
     public class LoginModel : INotifyPropertyChanged
     {
-        private const string FileNameToSaveRefreshToken = "RefreshToken.txt";
         public LoginModel()
         {
-            TeamPulseUrl = "http://localhost/TeamPulse";
-            UserName = "booboo";
-            Password = "P@ssw0rd";
-
             LogonCommand = new RelayCommand(LogonExecute, LogonCanExecute);
         }
 
