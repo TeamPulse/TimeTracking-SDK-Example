@@ -17,7 +17,7 @@ namespace TimeTrackingApp
 
         private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            this.DataContext = new TimeTrackingModel(((App)Application.Current).AuthenticationHelper);
+            this.DataContext = new TimeTrackingModel(((App)Application.Current).TeamPulseApp);
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

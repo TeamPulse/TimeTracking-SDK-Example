@@ -8,7 +8,6 @@
       d:DesignHeight="300" d:DesignWidth="300"      
       Title="Login" Loaded="Page_Loaded">
     <Page.Resources>
-        <app:BoolToVisibleOrHidden x:Key="BooleanToVisibilityConverter" Reverse="False"  Collapse="True" />
         <Style TargetType="CheckBox">
             <Setter Property="Margin" Value="5, 10, 5, 0" />
         </Style>
@@ -23,22 +22,14 @@
     <Grid>
         <StackPanel>
             <Label>TeamPulse URL</Label>
-            <TextBox Text="{Binding TeamPulseUrl}" />
+            <TextBox Text="{Binding TeamPulseUrl}" />            
             
-            <CheckBox IsChecked="{Binding AuthenticateWithUserAndPassword}">Authenticate with User and Password</CheckBox>
-            <StackPanel Visibility="{Binding AuthenticateWithUserAndPassword, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <StackPanel>
                 <Label>User</Label>
                 <TextBox Text="{Binding UserName}" />
                 <Label>Password</Label>
                 <TextBox Text="{Binding Password}" />
             </StackPanel>
-
-            <CheckBox IsChecked="{Binding SaveRefreshToken}">Save refresh token</CheckBox>
-                        
-            <Label>Refresh Token</Label>
-            <TextBlock Text="{Binding RefreshToken}" TextWrapping="Wrap" Margin="15,0,0,0" FontWeight="Light" />
-
-            <CheckBox IsChecked="{Binding UseRefreshToken}">Use refresh token</CheckBox>
 
             <Button Command="{Binding LogonCommand}" HorizontalAlignment="Left" Width="200" Margin="20, 20, 0, 0">Logon</Button>
         </StackPanel>

@@ -23,8 +23,7 @@ namespace TimeTrackingApp
         }
 
         void model_SuccessfulLogin(object sender, EventArgs e)
-        {
-            ((App)Application.Current).AuthenticationHelper = ((LoginModel)sender).AuthenticationHelper;
+        {            
             this.NavigationService.Navigate(new Uri("TimeTracking.xaml", UriKind.Relative));
         }
     }

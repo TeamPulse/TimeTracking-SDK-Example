@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
-using Telerik.TeamPulse.Sdk.Common;
+using Telerik.TeamPulse.Sdk;
 
 namespace TimeTrackingApp
 {
@@ -10,6 +10,6 @@ namespace TimeTrackingApp
     /// </summary>
     public partial class App : Application
     {
-        public AuthenticationHelper AuthenticationHelper { get; set; }
+        public TeamPulseApp TeamPulseApp { get; set; }
     }
 }
