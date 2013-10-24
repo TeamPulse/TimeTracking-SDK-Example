@@ -3,30 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackingApp", "TimeTrackingApp\TimeTrackingApp.csproj", "{3109C878-5652-443D-9DE6-9C12CD283C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamPulse.Integration", "TeamPulse.Integration\TeamPulse.Integration.csproj", "{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataServiceSample", "TeamPulseDataServiceSample\DataServiceSample.csproj", "{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.TeamPulse.Sdk", "..\..\Source\TeamPulse.Sdk.v1\Telerik.TeamPulse.Sdk.csproj", "{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
+		SccNumberOfProjects = 3
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs.telerik.com:8082/teampulsecollection
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = TimeTrackingApp\\TimeTrackingApp.csproj
 		SccProjectName1 = TimeTrackingApp
 		SccLocalPath1 = TimeTrackingApp
-		SccProjectUniqueName2 = TeamPulse.Integration\\TeamPulse.Integration.csproj
-		SccProjectName2 = TeamPulse.Integration
-		SccLocalPath2 = TeamPulse.Integration
-		SccProjectUniqueName3 = TeamPulseDataServiceSample\\DataServiceSample.csproj
-		SccProjectName3 = TeamPulseDataServiceSample
-		SccLocalPath3 = TeamPulseDataServiceSample
-		SccProjectUniqueName4 = ..\\..\\Source\\TeamPulse.Sdk.v1\\Telerik.TeamPulse.Sdk.csproj
-		SccProjectName4 = ../../Source/TeamPulse.Sdk.v1
-		SccLocalPath4 = ..\\..\\Source\\TeamPulse.Sdk.v1
+		SccProjectUniqueName2 = ..\\..\\Source\\TeamPulse.Sdk.v1\\Telerik.TeamPulse.Sdk.csproj
+		SccProjectName2 = ../../Source/TeamPulse.Sdk.v1
+		SccLocalPath2 = ..\\..\\Source\\TeamPulse.Sdk.v1
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,36 +45,6 @@ Global
 		{3109C878-5652-443D-9DE6-9C12CD283C2C}.TestWebLinkValidator|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3109C878-5652-443D-9DE6-9C12CD283C2C}.TestWebLinkValidator|Mixed Platforms.Build.0 = Release|Any CPU
 		{3109C878-5652-443D-9DE6-9C12CD283C2C}.TestWebLinkValidator|x86.ActiveCfg = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.Release|x86.ActiveCfg = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.TestWebLinkValidator|Any CPU.ActiveCfg = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.TestWebLinkValidator|Any CPU.Build.0 = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.TestWebLinkValidator|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.TestWebLinkValidator|Mixed Platforms.Build.0 = Release|Any CPU
-		{A7962F85-FE26-44B9-8B68-EE87DDA1BE4C}.TestWebLinkValidator|x86.ActiveCfg = Release|Any CPU
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Debug|x86.ActiveCfg = Debug|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Debug|x86.Build.0 = Debug|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Release|Any CPU.ActiveCfg = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Release|Mixed Platforms.Build.0 = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Release|x86.ActiveCfg = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.Release|x86.Build.0 = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.TestWebLinkValidator|Any CPU.ActiveCfg = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.TestWebLinkValidator|Mixed Platforms.ActiveCfg = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.TestWebLinkValidator|Mixed Platforms.Build.0 = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.TestWebLinkValidator|x86.ActiveCfg = Release|x86
-		{40EDCEBE-4EB3-47BC-8369-57405A88B9D9}.TestWebLinkValidator|x86.Build.0 = Release|x86
 		{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
