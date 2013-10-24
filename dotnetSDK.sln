@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTrackingApp", "TimeTrackingApp\TimeTrackingApp.csproj", "{3109C878-5652-443D-9DE6-9C12CD283C2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.TeamPulse.Sdk", "..\..\Source\TeamPulse.Sdk.v1\Telerik.TeamPulse.Sdk.csproj", "{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.TeamPulse.Sdk", "TeamPulse.Sdk.v1\Telerik.TeamPulse.Sdk.csproj", "{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -14,9 +14,9 @@ Global
 		SccProjectUniqueName1 = TimeTrackingApp\\TimeTrackingApp.csproj
 		SccProjectName1 = TimeTrackingApp
 		SccLocalPath1 = TimeTrackingApp
-		SccProjectUniqueName2 = ..\\..\\Source\\TeamPulse.Sdk.v1\\Telerik.TeamPulse.Sdk.csproj
-		SccProjectName2 = ../../Source/TeamPulse.Sdk.v1
-		SccLocalPath2 = ..\\..\\Source\\TeamPulse.Sdk.v1
+		SccProjectUniqueName2 = TeamPulse.Sdk.v1\\Telerik.TeamPulse.Sdk.csproj
+		SccProjectName2 = TeamPulse.Sdk.v1
+		SccLocalPath2 = TeamPulse.Sdk.v1
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

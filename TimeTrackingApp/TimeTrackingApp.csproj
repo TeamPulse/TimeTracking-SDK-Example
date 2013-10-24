@@ -122,9 +122,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\TeamPulse.Sdk.v1\Telerik.TeamPulse.Sdk.csproj">
+    <ProjectReference Include="..\TeamPulse.Sdk.v1\Telerik.TeamPulse.Sdk.csproj">
       <Project>{fa46abb2-2e45-4739-b8a6-e77daebe7d48}</Project>
-      <Name>TeamPulse.Sdk</Name>
+      <Name>Telerik.TeamPulse.Sdk</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
