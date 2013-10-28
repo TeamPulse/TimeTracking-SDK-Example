@@ -5,9 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:app="clr-namespace:TimeTrackingApp"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"      
+      d:DesignHeight="320" d:DesignWidth="300"      
       Title="Login" Loaded="Page_Loaded">
     <Page.Resources>
+        <app:BoolToVisibleOrHidden x:Key="BooleanToVisibilityConverter" Reverse="False"  Collapse="True" />
         <Style TargetType="CheckBox">
             <Setter Property="Margin" Value="5, 10, 5, 0" />
         </Style>
@@ -17,18 +18,27 @@
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="10, 0, 10, 0" />
         </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Margin" Value="10, 0, 10, 0" />
+        </Style>
     </Page.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid>
         <StackPanel>
             <Label>TeamPulse URL</Label>
-            <TextBox Text="{Binding TeamPulseUrl}" />            
-            
+            <TextBox Text="{Binding TeamPulseUrl}" />
+
             <StackPanel>
                 <Label>User</Label>
                 <TextBox Text="{Binding UserName}" />
                 <Label>Password</Label>
-                <TextBox Text="{Binding Password}" />
+                <PasswordBox app:PasswordHelper.Attach="True" app:PasswordHelper.Password="{Binding Password, Mode=TwoWay}" />
+            </StackPanel>
+
+            <CheckBox IsChecked="{Binding AuthenticateWithUserAndPassword, Mode=TwoWay}">Authenticate with windows credentials</CheckBox>
+            <StackPanel Visibility="{Binding AuthenticateWithUserAndPassword, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Label>Domain</Label>
+                <TextBox Text="{Binding Domain}" />
             </StackPanel>
 
             <Button Command="{Binding LogonCommand}" HorizontalAlignment="Left" Width="200" Margin="20, 20, 0, 0">Logon</Button>

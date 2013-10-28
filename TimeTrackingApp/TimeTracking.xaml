@@ -6,7 +6,6 @@
       xmlns:app="clr-namespace:TimeTrackingApp"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      xmlns:local="clr-namespace:TimeTrackingApp"
 	Title="TimeTracking" Loaded="Page_Loaded">
     <Page.Resources>
         <app:BoolToVisibleOrHidden x:Key="BooleanToVisibilityConverter" Reverse="False"  Collapse="True" />
@@ -34,7 +33,7 @@
                     <ListBox Margin="5" Grid.Row="1" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto"
                 ItemsSource="{Binding MyTasks}" SelectedValue="{Binding SelectedTask}">
                         <ListBox.Resources>
-                            <local:WorkItemFieldsNameToString x:Key="convertNametoString"/>
+                            <app:WorkItemFieldsNameToString x:Key="convertNametoString"/>
                         </ListBox.Resources>
                         <ListBox.ItemTemplate>                            
                             <DataTemplate>

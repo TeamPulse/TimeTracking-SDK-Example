@@ -17,7 +17,7 @@ namespace TimeTrackingApp
         public string TeamPulseUrl { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string RefreshToken { get; set; }        
+        public string Domain { get; set; }        
         
         public event EventHandler SuccessfulLogin;
 
@@ -38,6 +38,23 @@ namespace TimeTrackingApp
             }
         }
 
+        private bool authenticateWithUserAndPassword;
+        public bool AuthenticateWithUserAndPassword
+        {
+            get
+            {
+                return authenticateWithUserAndPassword;
+            }
+            set
+            {
+                if (authenticateWithUserAndPassword != value)
+                {
+                    authenticateWithUserAndPassword = value;
+                    OnPropertyChanged("AuthenticateWithUserAndPassword");
+                }
+            }
+        }
+
         public ICommand LogonCommand { get; private set; }
 
         private void LogonExecute(object arg)
@@ -48,7 +65,8 @@ namespace TimeTrackingApp
                 {
                     SiteUrl = this.TeamPulseUrl,
                     Username = this.UserName,
-                    Password = this.Password
+                    Password = this.Password,
+                    Domain = this.AuthenticateWithUserAndPassword ? this.Domain : null
                 };
 
                 var app = new TeamPulseApp(settings);

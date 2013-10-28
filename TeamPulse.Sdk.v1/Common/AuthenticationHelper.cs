@@ -76,7 +76,15 @@ namespace Telerik.TeamPulse.Sdk.Common
                             else
                             {
                                 string refreshToken;
-                                var cookie = GetWindowsCredsAuthCookie(TeamPulseUrl, true);
+                                Cookie cookie = null;
+                                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                                {
+                                    cookie = GetWindowsCredsAuthCookie(TeamPulseUrl, true);
+                                }
+                                else
+                                {
+                                    cookie = GetWindowsCredsAuthCookie(TeamPulseUrl, false, username, password, domain);
+                                }
                                 AccessToken = AcquireAccessTokenFromTheCookie(location, clientId, cookie, out refreshToken);
                                 RefreshToken = refreshToken;
                             }
