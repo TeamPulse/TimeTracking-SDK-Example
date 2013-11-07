@@ -6,18 +6,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telerik.TeamPulse.Sdk", "TeamPulse.Sdk.v1\Telerik.TeamPulse.Sdk.csproj", "{FA46ABB2-2E45-4739-B8A6-E77DAEBE7D48}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.telerik.com:8082/teampulsecollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = TimeTrackingApp\\TimeTrackingApp.csproj
-		SccProjectName1 = TimeTrackingApp
-		SccLocalPath1 = TimeTrackingApp
-		SccProjectUniqueName2 = TeamPulse.Sdk.v1\\Telerik.TeamPulse.Sdk.csproj
-		SccProjectName2 = TeamPulse.Sdk.v1
-		SccLocalPath2 = TeamPulse.Sdk.v1
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
