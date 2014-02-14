@@ -29,6 +29,11 @@ namespace Telerik.TeamPulse.Sdk
                 this.Login();
             }
         }
+        
+        public string GetAccessToken()
+        {
+            return this.accessToken;
+        }
 
         public AcceptanceCriteriaClient AcceptanceCriteria
         {
