@@ -10,6 +10,7 @@ namespace Telerik.TeamPulse.Sdk.Models
         public int projectId { get; set; }
         public int parentId { get; set; }
         public int sequence { get; set; }
+        public bool isRelease { get; set; }
         public float? minCapacity { get; set; }
         public float? maxCapacity { get; set; }
         public DateTime startDate { get; set; }

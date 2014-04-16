@@ -5,7 +5,7 @@ using System.Text;
 using Telerik.TeamPulse.Sdk.Common;
 
 namespace Telerik.TeamPulse.Sdk
-{  
+{
     public class TeamPulseApp
     {
         private string accessToken;
@@ -13,12 +13,12 @@ namespace Telerik.TeamPulse.Sdk
 
         public TeamPulseApp(TeamPulseAppSettings settings)
         {
-            this.settings = settings; 
+            this.settings = settings;
         }
 
         public void Login()
         {
-            var auth = new AuthenticationHelper(this.settings.SiteUrl, null, this.settings.Username, this.settings.Password, this.settings.Domain);
+            var auth = new AuthenticationHelper(this.settings.SiteUrl, null, this.settings.UseWindowsAuth, this.settings.Username, this.settings.Password, this.settings.Domain);
             this.accessToken = auth.Authenticate();
         }
 
@@ -29,7 +29,7 @@ namespace Telerik.TeamPulse.Sdk
                 this.Login();
             }
         }
-        
+
         public string GetAccessToken()
         {
             return this.accessToken;
@@ -61,7 +61,7 @@ namespace Telerik.TeamPulse.Sdk
                 return new AreasClient(this.settings.SiteUrl, this.accessToken);
             }
         }
-        
+
         public AttachmentsClient Attachments
         {
             get
@@ -70,7 +70,7 @@ namespace Telerik.TeamPulse.Sdk
                 return new AttachmentsClient(this.settings.SiteUrl, this.accessToken);
             }
         }
-                
+
         public CommentsClient Comments
         {
             get
@@ -79,7 +79,7 @@ namespace Telerik.TeamPulse.Sdk
                 return new CommentsClient(this.settings.SiteUrl, this.accessToken);
             }
         }
-        
+
         public IterationsClient Iterations
         {
             get
@@ -106,7 +106,7 @@ namespace Telerik.TeamPulse.Sdk
                 return new ProjectsClient(this.settings.SiteUrl, this.accessToken);
             }
         }
-        
+
         public TeamsClient Teams
         {
             get

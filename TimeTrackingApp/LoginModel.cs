@@ -17,8 +17,8 @@ namespace TimeTrackingApp
         public string TeamPulseUrl { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string Domain { get; set; }        
-        
+        public string Domain { get; set; }
+
         public event EventHandler SuccessfulLogin;
 
         private string message;
@@ -64,9 +64,11 @@ namespace TimeTrackingApp
                 var settings = new TeamPulseAppSettings()
                 {
                     SiteUrl = this.TeamPulseUrl,
+
+                    UseWindowsAuth = this.AuthenticateWithUserAndPassword,
                     Username = this.UserName,
                     Password = this.Password,
-                    Domain = this.AuthenticateWithUserAndPassword ? this.Domain : null
+                    Domain = this.Domain
                 };
 
                 var app = new TeamPulseApp(settings);
@@ -79,7 +81,7 @@ namespace TimeTrackingApp
             catch (ApplicationException ex)
             {
                 MessageBox.Show(ex.Message);
-            }            
+            }
         }
 
         private bool LogonCanExecute(object arg)

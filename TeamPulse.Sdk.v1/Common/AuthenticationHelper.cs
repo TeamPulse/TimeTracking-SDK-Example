@@ -10,10 +10,11 @@ namespace Telerik.TeamPulse.Sdk.Common
     public class AuthenticationHelper
     {
         public string TeamPulseUrl { get; private set; }
-        
-        private string domain;
+
+        private readonly string domain;
         private readonly string username;
         private readonly string password;
+        private readonly bool useWindowsAuth;
 
         private string RestrictedUrl
         {
@@ -22,23 +23,24 @@ namespace Telerik.TeamPulse.Sdk.Common
                 return TeamPulseUrl + "/Authentication/Restrict";
             }
         }
-        
+
         public string AccessToken { get; private set; }
 
         public string RefreshToken { get; private set; }
 
         public AuthenticationHelper(string teamPulseUrl, string refreshToken, string username, string password)
-            : this(teamPulseUrl, refreshToken, username, password, null)
+            : this(teamPulseUrl, refreshToken, false, username, password, null)
         {
 
         }
 
-        public AuthenticationHelper(string teamPulseUrl, string refreshToken, string username, string password, string domain)
+        public AuthenticationHelper(string teamPulseUrl, string refreshToken, bool useWindowsAuth, string username, string password, string domain)
         {
             this.RefreshToken = refreshToken;
+            this.useWindowsAuth = useWindowsAuth;
             this.password = password;
             this.username = username;
-            this.domain = domain;            
+            this.domain = domain;
             this.TeamPulseUrl = teamPulseUrl;
         }
 
@@ -67,7 +69,7 @@ namespace Telerik.TeamPulse.Sdk.Common
                         }
                         else
                         {
-                            if (string.IsNullOrEmpty(domain))
+                            if (!this.useWindowsAuth)
                             {
                                 string refreshToken;
                                 AccessToken = AcquireAccessTokenWithPassword(location, clientId, username, password, out refreshToken);
@@ -103,13 +105,13 @@ namespace Telerik.TeamPulse.Sdk.Common
         private static HttpStatusCode TryToAccessTeamPulse(string teamPulseUrl, out WebHeaderCollection responseHeaders)
         {
             string body;
-            
-                NameValueCollection requestHeaders = new NameValueCollection();
-                requestHeaders["Authorization"] = "WRAP";
 
-                var responseCode = Request(teamPulseUrl, out body, out responseHeaders, requestHeaders: requestHeaders);
+            NameValueCollection requestHeaders = new NameValueCollection();
+            requestHeaders["Authorization"] = "WRAP";
 
-                return responseCode;
+            var responseCode = Request(teamPulseUrl, out body, out responseHeaders, requestHeaders: requestHeaders);
+
+            return responseCode;
         }
 
         private static string AcquireAccessTokenFromRefreshToken(string location, string clientId, string refreshToken)
@@ -298,7 +300,6 @@ namespace Telerik.TeamPulse.Sdk.Common
 
                 foreach (string c in cookies)
                 {
-                    //if (!string.IsNullOrWhiteSpace(c))
                     if (!string.IsNullOrEmpty(c))
                     {
                         var trimmedc = c.Trim();

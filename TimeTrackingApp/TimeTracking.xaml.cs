@@ -27,6 +27,6 @@ namespace TimeTrackingApp
             {
                 ((TimeTrackingModel)this.DataContext).LoadTodayTimeEntries();
             }
-        }
+        }        
     }
 }
