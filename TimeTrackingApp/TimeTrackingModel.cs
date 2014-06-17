@@ -325,7 +325,6 @@ namespace TimeTrackingApp
         {
             string odataOptions = string.Format("?$filter={0} eq '{1}' and {2} eq {3} and {4} eq {5}",
                 "type", "Task", "projectId", SelectedProject.id, "AssignedToID", currentUser.id);
-            var tasks = App.WorkItems.Get(odataOptions).results;
 
 			WorkItem[] tasks = null;
             try
