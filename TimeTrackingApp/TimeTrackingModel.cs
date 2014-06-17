@@ -247,24 +247,31 @@ namespace TimeTrackingApp
         {
             try
             {
-                dispatcherTimer.Stop();
-                TimeSpan ts = DateTime.Now - startTime;
-                var hours = (ts.Minutes == 0 ? 1 : ts.Minutes) / (float)60;
-                
-                var currentTimeEntry = App.TimeEntries.GetByTask(SelectedTask.id).results.
-                    FirstOrDefault(x=> x.type == SelectedTimeEntryType.name && x.date == DateTime.Now.Date);
-
-                if (currentTimeEntry != null)
+				if (SelectedTask != null && SelectedTask.id > 0)
                 {
-                    UpdateTimeEntry(hours, currentTimeEntry);
-                }
+					dispatcherTimer.Stop();
+					TimeSpan ts = DateTime.Now - startTime;
+					var hours = (ts.Minutes == 0 ? 1 : ts.Minutes) / (float)60;
+					
+					var currentTimeEntry = App.TimeEntries.GetByTask(SelectedTask.id).results.
+						FirstOrDefault(x=> x.type == SelectedTimeEntryType.name && x.date == DateTime.Now.Date);
+
+					if (currentTimeEntry != null)
+					{
+						UpdateTimeEntry(hours, currentTimeEntry);
+					}
+					else
+					{
+						CreateTimeEntry(hours);
+					}
+
+					Message = string.Format("You've successfuly logged {0} hours to task id {1}.", hours, SelectedTask.id);
+					MessageBox.Show(Message);
+				}
                 else
                 {
-                    CreateTimeEntry(hours);
+                    MessageBox.Show("Please select a task first.");
                 }
-
-                Message = string.Format("You've successfuly logged {0} hours to task id {1}.", hours, SelectedTask.id);
-                MessageBox.Show(Message);
             }
             catch (ApplicationException ex)
             {
@@ -320,6 +327,17 @@ namespace TimeTrackingApp
                 "type", "Task", "projectId", SelectedProject.id, "AssignedToID", currentUser.id);
             var tasks = App.WorkItems.Get(odataOptions).results;
 
+			WorkItem[] tasks = null;
+            try
+            {
+                tasks = App.WorkItems.Get(odataOptions).results;
+            }
+            catch (Exception ex)
+            {
+                this.App.Login();
+                tasks = App.WorkItems.Get(odataOptions).results;
+            }
+			
             MyTasks = new ObservableCollection<WorkItem>(tasks);
         }
 
